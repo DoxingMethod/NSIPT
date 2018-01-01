@@ -1,0 +1,159 @@
+#!/usr/bin/env python2.7
+
+import os
+import sys
+
+os.system("clear && clear && clear")
+logo = '''\033[0m
+.________________________
+|   \______   \__    ___/
+|   ||     ___/ |    |
+|   ||    |     |    |
+|___||____|     |____| \033[0m  \033[91m   \033[1m
+
+
+	=-[!] Coded By NetSec [!]-=
+	=-[!]  @DoxingMethod  [!]-=
+	'''
+menu = '''\033[0m
+	{1}--Whois lookup
+	{2}--Traceroute
+	{3}--DNS lookup
+	{4}--Reverse DNS lookup
+	{5}--GeoIP lookup
+	{6}--Port Scanner
+	{7}--Reverse IP lookup
+	{0}--Exit
+'''
+print logo
+print menu
+
+def quit():
+            con = raw_input('Continue [Y/n] -> ')
+            if con[0].upper() == 'N':
+                exit()
+            else:
+                os.system("clear")
+                print logo
+                print menu
+                select()
+           
+def  select():
+  try:
+    choice = input("IPT~# ")
+    if choice == 1:
+      d3 = raw_input('Enter IP Or Domain : ')
+      os.system("clear")
+      print("""
+ __      __.__           .___        
+/  \    /  \  |__   ____ |   | ______
+\   \/\/   /  |  \ /  _ \|   |/  ___/
+ \        /|   Y  (  <_> )   |\___ \ 
+  \__/\  / |___|  /\____/|___/____  >
+       \/       \/                \/                              
+      """)
+      os.system("curl http://api.hackertarget.com/whois/?q=" + d3)
+      print("")
+      quit()
+    elif choice == 0:
+	  os.system("clear")
+	  print("This tool is only available for Linux")
+    elif choice == 2:
+      d3 = raw_input('Enter IP Or Domain : ')
+      os.system("clear")
+      print("""
+___________                                               __          
+\__    ___/___________    ____  ___________  ____  __ ___/  |_  ____  
+  |    |  \_  __ \__  \ _/ ___\/ __ \_  __ \/  _ \|  |  \   __\/ __ \ 
+  |    |   |  | \// __ \\  \__\  ___/|  | \(  <_> )  |  /|  | \  ___/ 
+  |____|   |__|  (____  /\___  >___  >__|   \____/|____/ |__|  \___  >
+                      \/     \/    \/                              \/ 
+""")
+      os.system("curl https://api.hackertarget.com/mtr/?q=" + d3 )
+      print("")
+      quit()
+    elif choice == 3:
+      d3 = raw_input('Enter Domain : ')
+      os.system("clear")
+      print("""
+________    _______    _________ 
+\______ \   \      \  /   _____/ 
+ |    |  \  /   |   \ \_____  \  
+ |    `   \/    |    \/        \ 
+/_______  /\____|__  /_______  / 
+        \/         \/        \/    
+""")
+      os.system("curl http://api.hackertarget.com/dnslookup/?q=" + d3 )
+      print("")
+      quit()    
+    elif choice == 0:
+      print "Bye Bye"
+      os.system("clear")
+      exit()
+    elif choice == 4:
+	  d3 = raw_input('Enter IP Address - IP Range Or Domain  : ')
+	  os.system("clear")
+	  print("""
+__________              ________    _______    _________
+\______   \ _______  __ \______ \   \      \  /   _____/
+ |       _// __ \  \/ /  |    |  \  /   |   \ \_____  \ 
+ |    |   \  ___/\   /   |    `   \/    |    \/        \
+ |____|_  /\___  >\_/   /_______  /\____|__  /_______  /
+        \/     \/               \/         \/        \/ 
+                                                    
+	  """)
+	  os.system("curl https://api.hackertarget.com/reversedns/?q=" + d3 )
+	  print("")
+	  quit()
+    elif choice == 5:
+	  d3 = raw_input('Enter IP Or Domain : ')
+	  os.system("clear")
+	  print("""
+  ________             ._____________ 
+ /  _____/  ____  ____ |   \______   \
+/   \  ____/ __ \/  _ \|   ||     ___/
+\    \_\  \  ___(  <_> )   ||    |
+ \______  /\___  >____/|___||____|
+        \/     \/                	
+	""")
+	  os.system("curl http://api.hackertarget.com/geoip/?q=" + d3 )
+	  print("")
+	  print("")
+	  quit()
+    elif choice == 6:
+      d3 = raw_input('Enter IP Or Domain : ')
+      os.system("clear")
+      print("""
+  _____           _      _____                 
+ |  __ \         | |    / ____|
+ | |__) |__  _ __| |_  | (___   ___ __ _ _ __  
+ |  ___/ _ \| '__| __|  \___ \ / __/ _` | '_ \ 
+ | |  | (_) | |  | |_   ____) | (_| (_| | | | |
+ |_|   \___/|_|   \__| |_____/ \___\__,_|_| |_|
+""")
+      os.system("curl http://api.hackertarget.com/nmap/?q=" + d3 )
+      print("")
+      quit()
+    elif choice == 7:
+	  d3 = raw_input('Enter IP Or Domain : ')
+	  os.system("clear")
+	  print("""
+._____________  .__                 __                 
+|   \______   \ |  |   ____   ____ |  | ____ ________  
+|   ||     ___/ |  |  /  _ \ /  _ \|  |/ /  |  \____ \ 
+|   ||    |     |  |_(  <_> |  <_> )    <|  |  /  |_> >
+|___||____|     |____/\____/ \____/|__|_ \____/|   __/ 
+                                        \/     |__|      
+	  """)
+	  os.system("wget http://api.hackertarget.com/reverseiplookup/?q=" + d3 )
+	  os.system("clear")
+	  os.system("curl http://api.hackertarget.com/reverseiplookup/?q=" + d3 )
+	  print("")
+	  print("\033[91m\033[1mFile Saved On : ")
+	  os.system("pwd")
+	  print("File : index.html?q=" +d3)
+	  print("\033[0m")
+	  quit()
+  except(KeyboardInterrupt):
+    print ""
+select()
