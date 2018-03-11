@@ -16,3 +16,8 @@
 - $ cd NSIPT
 - (Rename ITP to IPT.py)
 - $ python IPT.py)
+
+# Prerequirements
+- Curl
+- Python2.7
+- Git
