@@ -13,7 +13,7 @@ logo = '''\033[0m
 
 
 	=-[!] Coded By NetSec [!]-=
-	=-[!]  @DoxingMethod  [!]-=
+	=-[!]  @PartialDuplex  [!]-=
 	'''
 menu = '''\033[0m
 	{1}--Whois lookup
